@@ -1,0 +1,28 @@
+digraph  {
+	209 -> 83;
+	209 -> 126;
+	83 -> "41 L";
+	83 -> 42;
+	126 -> 55;
+	126 -> 71;
+	42 -> "19 H";
+	42 -> "23 I";
+	"19 H" -> blablablablablablablablabla;
+	"19 H" -> blablablablablablablablablablablabla;
+	"23 I" -> blablabla;
+	"23 I" -> blablablablabla;
+	55 -> 24;
+	55 -> "31 J";
+	71 -> 34;
+	71 -> "37 K";
+	24 -> "11 E";
+	24 -> "13 F";
+	34 -> 17;
+	34 -> "17 G";
+	17 -> "7 D";
+	17 -> 10;
+	10 -> 5;
+	10 -> "5 C";
+	5 -> "2 A";
+	5 -> "3 B";
+}
