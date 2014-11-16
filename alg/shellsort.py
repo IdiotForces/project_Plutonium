@@ -71,6 +71,6 @@ if __name__ == '__main__':
 	# [2, 4, 6, 8, 10, 12, 16, 18, 20, 28, 30]
 	arr = [12,2,16,30,8,28,4,10,20,6,18]
 	# pprint.pprint(arr)
-	shellsort_2(arr)
-	# quicksort(arr)
+	# shellsort_2(arr)
+	quicksort(arr)
 	# pprint.pprint(arr)

@@ -19,26 +19,26 @@
 //
 //   * http://www.cppblog.com/goal00001111/articles/67230.html
 
+#include <iostream>
 #include <vector>
 #include <algorithm>
-#include <iostream>
 #include <numeric>
 using namespace std;
 
 template <typename ContainerT>
-void print_array(const ContainerT& src) {
+void print_array (const ContainerT& src) {
 	for (auto item : src)
 		cout << item << ' ';
 	cout << endl;
 }
 
-bool check_is_derange (const vector<unsigned int>& src) {
-	for (int i = 0; i < src.size(); i++)
+bool check_is_derange (const vector<std::size_t>& src) {
+	for (std::size_t i = 0; i < src.size(); i++)
 		if (src[i] == i) return false;
 	return true;
  }
 
-void generate_perm (vector<vector<unsigned int>> &dest, vector<unsigned int>& tmp, unsigned int ustart) {
+void generate_perm (vector<vector<std::size_t>> &dest, vector<std::size_t>& tmp, std::size_t ustart) {
 	if (tmp.size() - ustart <= 1) {
 		if (check_is_derange(tmp))
 			dest.push_back(tmp);
@@ -53,20 +53,19 @@ void generate_perm (vector<vector<unsigned int>> &dest, vector<unsigned int>& tm
 }
 
 template <typename T>
-vector<vector<T> > derangement(vector<T>& src) {
-	vector<unsigned int> tmp(src.size());
+vector<vector<T>> derangement (vector<T>& src) {
+	vector<std::size_t> tmp(src.size());
 	iota(begin(tmp), end(tmp), 0);
 
-	vector<vector<unsigned int>> tmp_dest;
+	vector<vector<std::size_t>> tmp_dest;
 	generate_perm(tmp_dest, tmp, 0);
 
-	vector<vector<T> > ret;
+	vector<vector<T>> ret;
 
 	for (auto item : tmp_dest) {
 		vector<T> vec_to_push;
-		for (unsigned int element_idx : item) {
+		for (std::size_t element_idx : item)
 			vec_to_push.push_back(src[element_idx]);
-		}
 		ret.push_back(vec_to_push);
 	}
 
@@ -74,7 +73,7 @@ vector<vector<T> > derangement(vector<T>& src) {
 
 }
 
-int main(int argc, char const *argv[]) {
+int main (int argc, char const *argv[]) {
 	vector<int> test = { 1, 2, 3, 4, 5, 6, 7, 8 };
 
 	auto dest = derangement(test);
