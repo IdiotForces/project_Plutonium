@@ -1,8 +1,10 @@
 import os
 import sys
 
-COUNT_PROC = 50
+COUNT_PROC = 64
 FACN = 100
+
+RESULT = 0
 
 rp, wp = os.pipe()
 r = os.fdopen(rp, 'r')
@@ -43,6 +45,9 @@ def main():
         ret *= long(r.readline())
     ret *= FACN
 
+    global RESULT
+    RESULT = ret
+
     print("PID %d: exiting..." % os.getpid())
     return
 
@@ -53,3 +58,5 @@ def start(x):
     global FACN
     FACN = x
     main()
+    global RESULT
+    return RESULT
