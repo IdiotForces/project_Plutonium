@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for i in {1..128};
+for i in {1..4194304};
 do
-	printf $((RANDOM%256));
-	printf ', ';
+	printf $((RANDOM%4194304));
+	printf ' ';
 done
