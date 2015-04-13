@@ -6,7 +6,7 @@ import pyspark
 if __name__ == '__main__':
 
     time_iteration = (len(sys.argv) >= 2) and int(sys.argv[1]) or 10000
-    
+
     spark_conf = pyspark.SparkConf().setAppName("NaivePi").set("spark.mesos.coarse", "true")
     sc = pyspark.SparkContext(conf=spark_conf)
 

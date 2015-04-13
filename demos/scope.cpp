@@ -17,6 +17,7 @@ int main(int argc, char const *argv[])
 		if (a == 1) {
 			int a = 2;
 			printf("2: %d\n", a);
+			
 		}
 	}
 
